@@ -1,16 +1,3 @@
-def CloseNumber(n):
-    n = int(input('Введите число, которое хотите найти: '))
-    if n < temp[0]:
-        return "n меньше всех"
-    for i in temp:
-        if n < i:
-            return x
-        x = i
-    else:
-        return "n больше всех"
-
-import random
-
 a = int(input('Введите количество элементов: '))
 temp = []
 for i in range(a):
@@ -18,4 +5,15 @@ for i in range(a):
     temp.append(chisla)
 print(f'Введенные числа: {temp}')
 
-print(CloseNumber(temp))
+items = temp
+n = int(input('Введите число, которое хотите найти: '))
+ 
+def nearest_value(items, n):
+    found = items[0]
+    for item in items:      
+        if abs(item - n) < abs(found - n):
+            found = item 
+    return found 
+ 
+print(f'Ближайшее число к {n} в списке {items} является: {nearest_value(items, n)}')
+
